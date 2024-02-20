@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://dirhe0cfl4lw4"]
+
+[ext_resource type="PackedScene" uid="uid://dmcythal220ki" path="res://scenes/player.tscn" id="1_07u00"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_46uwu"]
+[ext_resource type="PackedScene" uid="uid://28mh71alydw" path="res://scenes/death_zone.tscn" id="3_yfgqa"]
+[ext_resource type="PackedScene" uid="uid://pn74bfjrb07t" path="res://scenes/projectile_spwaner.tscn" id="4_qfgrq"]
+[ext_resource type="PackedScene" uid="uid://dwpcomuevvl2q" path="res://scenes/ui_layer.tscn" id="5_r8vwg"]
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_46uwu")
+
+[node name="UILayer" parent="." instance=ExtResource("5_r8vwg")]
+
+[node name="DeathZone" parent="." instance=ExtResource("3_yfgqa")]
+position = Vector2(0, 627)
+scale = Vector2(55.04, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_07u00")]
+position = Vector2(243, 496)
+
+[node name="ProjectileSpwaner" parent="." instance=ExtResource("4_qfgrq")]
